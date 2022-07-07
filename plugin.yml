@@ -1,0 +1,6 @@
+---
+name: PlaySound
+version: 1.0
+main: xqwtxon\PlaySound\Main
+api: 4..0.0
+...
