@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace xqwtxon\PlaySound;
 
 use xqwtxon\PlaySound\Main;
+use pocketmine\player\Player;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
