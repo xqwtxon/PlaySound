@@ -16,7 +16,7 @@ class PlaySoundCommand extends Command {
     public function __construct(Main $plugin) {
         $this->plugin = $plugin;
         $this->setPermission("pocketmine.command.playsound");
-        parent::__construct("playsound", "Play sound to a player.", "/playsound <sound_name> <player_name> [pitch] [minimum_volume] [maxinum_volume]")
+        parent::__construct("playsound", "Play sound to a player.", "/playsound <sound_name> <player_name> [pitch] [minimum_volume] [maxinum_volume]");
     }
     
     public function execute(CommandSender $sender, string $commandLabel, array $args) :void {
