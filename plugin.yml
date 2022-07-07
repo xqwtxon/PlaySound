@@ -2,5 +2,8 @@
 name: PlaySound
 version: 1.0
 main: xqwtxon\PlaySound\Main
-api: 4..0.0
+api: 4.0.0
+permission:
+    pocketmine.command.playsound:
+        default: op
 ...
