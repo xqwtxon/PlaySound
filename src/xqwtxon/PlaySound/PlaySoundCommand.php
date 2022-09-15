@@ -7,17 +7,23 @@ namespace xqwtxon\PlaySound;
 use xqwtxon\PlaySound\Main;
 use pocketmine\player\Player;
 use pocketmine\command\Command;
+use pocketmine\plugin\PluginOwned;
+use pocketmine\plugin\Plugin;
 use pocketmine\command\CommandSender;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 
-class PlaySoundCommand extends Command {
+class PlaySoundCommand extends Command implements PluginOwned{
     
     private Main $plugin;
     
-    public function __construct(Main $plugin) {
+    public function getOwningPlugin() : Plugin{
+        return $this->plugin;
+    }
+    
+    public function __construct(Main $plugin){
         $this->plugin = $plugin;
+        parent::__construct("playsound", "Play sound to the player or your self.", "/playsound <player: string> <sound: string> [volume: float] [minimumVolume: float] [pitch: float]")
         $this->setPermission("pocketmine.command.playsound");
-        parent::__construct("playsound", "Play sound to a player.", "/playsound <sound_name> <player_name> [pitch] [minimum_volume] [maxinum_volume]");
     }
     
     public function execute(CommandSender $sender, string $commandLabel, array $args) :void {
@@ -33,7 +39,7 @@ class PlaySoundCommand extends Command {
             $sender->sendMessage("Successfully played: {$args[0]} to {$sender->getName()}!");
             return;
         } else {
-            $target = $this->plugin->getServer()->getPlayerExact($args[1]);
+            $target = $this->getOwningPlugin()->getServer()->getPlayerExact($args[1]);
             if($target === null){
                 $sender->sendMessage("Sorry, we cant find that player!");
                 return;

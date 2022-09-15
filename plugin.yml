@@ -1,9 +1,11 @@
 ---
 name: PlaySound
-version: 1.0
+version: 1.1
 main: xqwtxon\PlaySound\Main
 api: 4.0.0
 permissions:
     pocketmine.command.playsound:
+        default: op
+    pocketmine.command.stopsound:
         default: op
 ...
