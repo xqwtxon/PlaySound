@@ -22,7 +22,7 @@ class PlaySoundCommand extends Command implements PluginOwned{
     
     public function __construct(Main $plugin){
         $this->plugin = $plugin;
-        parent::__construct("playsound", "Play sound to the player or your self.", "/playsound <player: string> <sound: string> [volume: float] [minimumVolume: float] [pitch: float]")
+        parent::__construct("playsound", "Play sound to the player or your self.", "/playsound <player: string> <sound: string> [volume: float] [minimumVolume: float] [pitch: float]");
         $this->setPermission("pocketmine.command.playsound");
     }
     

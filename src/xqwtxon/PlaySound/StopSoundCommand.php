@@ -22,7 +22,7 @@ class StopSoundCommand extends Command implements PluginOwned {
     
     public function __construct(Main $plugin){
         $this->plugin = $plugin;
-        parent::__construct("stopsound", "Stop sound to the player or on yourself.", "/stopsound <sound: string>|all <player: string>")
+        parent::__construct("stopsound", "Stop sound to the player or on yourself.", "/stopsound <sound: string>|all <player: string>");
         $this->setPermission("pocketmine.command.stopsound");
     }
     
