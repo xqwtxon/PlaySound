@@ -65,6 +65,6 @@ class StopSoundCommand extends Command implements PluginOwned {
         $packet = new StopSoundPacket();
         $packet->soundName = $soundName;
         $packet->stopAll = true;
-        $player->dataPacket($packet);
+        $player->getNetworkSession()->sendDataPacket($packet);
     }
 }
